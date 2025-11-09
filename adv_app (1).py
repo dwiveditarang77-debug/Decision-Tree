@@ -1,7 +1,8 @@
 import streamlit as st
 import pickle
 import numpy as np
-
+import joblib
+Users can now interact with the Streamlit application via the generated localtunnel URL to test the model's prediction functionality with various inputs.
 # Load the saved model
 model = pickle.load(open('linear_reg.sav', 'rb'))
 
@@ -17,3 +18,4 @@ if st.button('Predict Sales'):
     input_data = np.array([[TV, Radio, Newspaper]])
     prediction = model.predict(input_data)[0]
     st.success(f'Predicted Sales: {prediction:.2f}')
+
